@@ -6,8 +6,11 @@ deploy:
   edge: true
   provider: chef-supermarket
   user_id: criteo
-  cookbook_category: "Operating Systems & Virtualization"
+  cookbook_category: Operating Systems & Virtualization
   client_key: ".travis/client.pem"
   on:
     tags: true
     all_branches: true
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_735841bd5591_key -iv $encrypted_735841bd5591_iv
+  -in .travis/client.pem.enc -out .travis/client.pem -d
