@@ -41,6 +41,7 @@ property :options, kind_of: [String, Array, NilClass], default: nil
 property :install, kind_of: [String, NilClass], default: nil
 property :remove, kind_of: [String, NilClass], default: nil
 property :blacklist, kind_of: [TrueClass, FalseClass, NilClass], default: nil
+property :check_availability, kind_of: [TrueClass, FalseClass], default: false
 
 def blacklisted?
   # Ref:
@@ -50,4 +51,8 @@ end
 
 def loaded?
   @loaded ||= shell_out("/sbin/lsmod | grep -q -w ^#{module_name}").exitstatus == 0
+end
+
+def available?
+  ::Dir.glob(::File.join('/', 'lib', 'modules', node['kernel']['release'], '**', "#{module_name}.ko")).size == 1
 end
