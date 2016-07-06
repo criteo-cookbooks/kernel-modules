@@ -77,6 +77,7 @@ Name | Description | Default| Type
 `install`| set the modprobe command _install_| nil| _String/NilClass_
 `remove`| set the modprobe command _remove_| nil| _String/NilClass_
 `blacklist`| set the modprobe command _blacklist_| nil| _Boolean/NilClass_
+`check_availability`| before loading, ensure the module is available on disk for the running kernel| false| _Boolean_
 
 Contributing
 ------------

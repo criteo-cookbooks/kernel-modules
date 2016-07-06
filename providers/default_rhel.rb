@@ -81,6 +81,7 @@ action :load do
     command "#{MODPROBE_BIN} -v #{new_resource.name}"
     not_if { current_resource.loaded? }
     not_if { new_resource.blacklisted? } # No need to load if blacklisted
+    only_if { new_resource.check_availability && new_resource.available? } # skip if missing module
   end
 end
 

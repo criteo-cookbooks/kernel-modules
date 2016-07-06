@@ -1,8 +1,7 @@
+# Cookbook Name:: kernel-modules
+# Author:: Jeremy MAURO <j.mauro@criteo.com>
 #
-# Cookbook Name:: test-module
-# Recipe:: default
-#
-# Copyright 2016, Criteo
+# Copyright 2016, Criteo.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,9 +16,9 @@
 # limitations under the License.
 #
 
-# delete firewire-core module to test 'check_availability' attribute
-file "/lib/modules/#{node['kernel']['release']}/kernel/drivers/firewire/firewire-core.ko" do
-  action :delete
-end
+require(File.expand_path('../../helpers/inspec/spec_helper', File.dirname(__FILE__)))
 
-include_recipe 'kernel-modules'
+# Making sure firewire-core module is not loaded
+describe kernel_module('firewire-core') do
+  it { should_not be_loaded }
+end

@@ -16,6 +16,7 @@
 # limitations under the License.
 #
 default['kernel_modules']['modules']['lp']['blacklist'] = true
+default['kernel_modules']['modules']['firewire-core']['check_availability'] = true
 default['test-module']['action'] = []
 default['test-module']['onboot'] = true
 

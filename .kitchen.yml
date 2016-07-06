@@ -13,7 +13,7 @@ verifier:
 
 platforms:
   - name: ubuntu-14.04
-  - name: debian-8.0
+  - name: debian-8.3
   - name: centos-6.7
   - name: centos-7.1
   - name: centos-7.2
@@ -49,3 +49,7 @@ suites:
       test-module:
         action:
         - remove
+  - name: check_availability
+    run_list:
+      - recipe[test-module::default]
+
