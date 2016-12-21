@@ -48,7 +48,7 @@ default['kernel_modules']['packages'] = value_for_platform_family(
 # Modules init loading requirements
 default['kernel_modules']['modules_load.d'] = value_for_platform_family(
   rhel: value_for_platform(
-    %w(centos redhat) => {
+    %w(oracle centos redhat scientific enterpriseenterprise amazon xenserver cloudlinux ibm_powerkvm parallels nexus_centos) => {
       '~> 7.0' => '/etc/modules-load.d',
       '~> 6.0' => '/etc/sysconfig/modules',
     },
