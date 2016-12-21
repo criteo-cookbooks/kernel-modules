@@ -9,15 +9,15 @@
 <%= @alias.sort.map { |v| "options #{v} #{@name}" }.join("\n") %>
 <%   end -%>
 <%   if @install %>
-<%= 'install ' + @name + @install %>
+<%= 'install ' + [@name, @install].join(' ') %>
 <%   end %>
 <%   case @options
      when String -%>
-<%= 'options ' + @name + @options %>
+<%= 'options ' + [@name, @options].join(' ') %>
 <%   when Array  -%>
 <%= @options.sort.map { |v| "options #{@name} #{v}" }.join("\n") %>
 <%   end -%>
 <%   if @remove %>
-<%= 'remove ' + @name + @remove %>
+<%= 'remove ' + [@name, @remove].join(' ') %>
 <%   end %>
 <% end %>
