@@ -17,14 +17,14 @@
 #
 
 def module_path(type, distrib_version, module_name)
-  if %w(centos rhel).include?(os[:family])
+  if os[:family] == 'redhat'
     if type == :load
       return ::File.join('/etc/modprobe.d', module_name + '.conf')
     end
     if distrib_version == 6
-      ::File.join('/etc/sysconfig/modules', module_name + '.modules')
+      return ::File.join('/etc/sysconfig/modules', module_name + '.modules')
     else
-      ::File.join('/etc/modules-load.d', module_name + '.conf')
+      return ::File.join('/etc/modules-load.d', module_name + '.conf')
     end
   end
 end
