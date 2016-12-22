@@ -39,6 +39,10 @@ when /^7/
   }
 end
 
+default['kernel_modules']['modules']['ipv6'] = {
+  options: 'disable=1'
+}
+
 node['kernel_modules']['modules'].each do |mod, _property|
   default['kernel_modules']['modules'][mod]['action'] = node['test-module']['action'].map(&:to_sym)
   default['kernel_modules']['modules'][mod]['onboot'] = node['test-module']['onboot'] ? true : false
