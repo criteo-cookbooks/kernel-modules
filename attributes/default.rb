@@ -39,7 +39,7 @@ default['kernel_modules']['packages'] = value_for_platform_family(
         'kmod',              # rpm -q --whatprovides /etc/modprobe.d
       ],
     },
-    'default'         => [
+    'default' => [
       'kmod',
     ],
   ),
@@ -47,8 +47,8 @@ default['kernel_modules']['packages'] = value_for_platform_family(
 
 # Modules init loading requirements
 default['kernel_modules']['modules_load.d'] = value_for_platform_family(
-  rhel: value_for_platform(
-    %w(centos redhat) => {
+  rhel:    value_for_platform(
+    %w[centos redhat oracle] => {
       '~> 7.0' => '/etc/modules-load.d',
       '~> 6.0' => '/etc/sysconfig/modules',
     },

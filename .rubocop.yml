@@ -43,7 +43,7 @@ Style/TrailingCommaInLiteral:
 #   }
 #
 ### Align hashes as a table
-Style/AlignHash:
+Layout/AlignHash:
   EnforcedColonStyle: table
   EnforcedHashRocketStyle: key
 # When dealing with long key names, it is easier to read hashes in colon
@@ -73,7 +73,7 @@ Metrics/MethodLength:
   Max: 40
 
 # This rule generates many false positive
-Style/VariableNumber:
+Naming/VariableNumber:
   Enabled: false
 
 # This metric is hard to grasp but let's avoid delirious code
@@ -106,5 +106,8 @@ Style/Documentation:
   Enabled: false
 
 # Filename forces snake case for file names, we just want consistency for now
-Style/FileName:
+Naming/FileName:
+  Enabled: false
+
+Style/MixinUsage:
   Enabled: false

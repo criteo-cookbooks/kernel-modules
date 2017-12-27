@@ -43,7 +43,7 @@ default['kernel_modules']['modules']['tulip'] = {
   options: 'tulip_debug=1',
 }
 
-node['kernel_modules']['modules'].each do |mod, _property|
+node['kernel_modules']['modules'].each_key do |mod|
   default['kernel_modules']['modules'][mod]['action'] = node['test-module']['action'].map(&:to_sym)
   default['kernel_modules']['modules'][mod]['onboot'] = node['test-module']['onboot'] ? true : false
 end
