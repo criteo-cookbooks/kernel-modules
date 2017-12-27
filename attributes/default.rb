@@ -29,7 +29,7 @@
 # Packages requirements
 default['kernel_modules']['packages'] = value_for_platform_family(
   rhel: value_for_platform(
-    %w(centos redhat) => {
+    %w[centos redhat oracle] => {
       '~> 6.0' => [
         'initscripts',       # rpm -q --whatprovides /etc/sysconfig/modules
         'module-init-tools', # rpm -q --whatprovides /sbin/modprobe /etc/modprobe.d
