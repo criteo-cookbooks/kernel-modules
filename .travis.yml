@@ -3,6 +3,7 @@ cache: bundler
 rvm:
 - 2.3.2
 deploy:
+  skip_cleanup: true
   edge: true
   provider: chef-supermarket
   user_id: criteo
@@ -10,9 +11,6 @@ deploy:
   client_key: ".travis/client.pem"
   on:
     tags: true
-before_install:
-- openssl aes-256-cbc -K $encrypted_95553ca09dad_key -iv $encrypted_95553ca09dad_iv
-  -in .travis/travis-ci.pem.enc -out ~/.ssh/id_rsa -d
 env:
   global:
   - secure: Q383SsPRo5uP+FZkOX0DHznbnzoa7PFyNaW3Wj7BPD9/9S8cV1KGxVPxC0B8VLp4LJ3L6z8EtaoTEuoy4X1EsNZ+apVmK9PVVS01JhrZMU79DjBB0S/25I9/T6/M1aH1madkRdN5GaKMMh7pke/aBsl96Jv3JC1hIpoqJDOx3Rruku8eeqyBwVP0AsxqoSwBbbFLD6tZgdUigcbyVwvpjKstj4IGlcvqGPLjACiCpjcjqnhTjhvmvKeg1KY+avY8p7rB+hoUQGlSPGsvkZMN8uBZgrFgxfXp8sFbTUUN2pBZ0BYPbvu5dYBFIlxoB3U1zGzEwa2SZesuYUuPMf4VjQ4u9Cgrahp6GzD+X6bFs4wrcOABD0t+nYiI4qFknCourXLiuXCOtoQ5qQiKuyrZH4g2YyLpZtY5HEOgerX6xj7THkEvyc/gMd3UGahw3o6WDyk0Yf65xARuiRk8H53tCTCEEBfmf/f5G7K2Ow51M9S/msY+5GBwCj+rYUPv3/mJBbEVk2Ag4Gf97htZtfvVs0yhakTt39BWNBZ4KD+m8akNz+97kU3Jkg2WL5CFrSaCY/vfO247dTEaM92fooAinRM8PD7I3M9ISbRBBz+rdx2JE7mYeJTSxxHw4jninz1oCc45Htfn/Ju6nTi+t3cTJh1QDHvFYjflxyVLGT7ST5s=
@@ -20,6 +18,8 @@ env:
   - secure: U+q6g8oRSCmzUXhHszAyGsfMB8Ggm4XmJzlCiWUfOKQpB1/JtfV5b1ddyu9LpUoGZemGhow6GcY7MnF8ogjZnCXX1aiBn8mQxkMlw7a5ZgWjFKllSfe7wDLmeKMIu0OPIlIXdu31B06aIxI1XwJ9w4QWuS/7XZhWKcN0AYxaeB+dOtN+08y/k4VbUpO0x5N19sebCFl/mH4rtfqrwd+R6ItCmf6+uqNYYNRmtDWq9fw+1EJ0gwyG32oAmg9cMhWRSbklzoFLRnJP8zNFaZ6R1877oh/HYKBSvFXi5aXzTDdbEjzv1yJt3DanveUfnxBaiMQwJtotRoOHPCN98DVZXk2OnSF9Qk3UarLTLY93qzexvgXlRqyyAJIx9A+xV5lYVOgcMXCjrcC2K+cjxQQrf8X376eLCisHAsFZqqoGU1bDSCHew4mnRmcd4iViEAK9aclJ9+iN5nhW1IooFhQNZEpqfrStZP/1zludHQICtoCUb0/tU8IiSe5EV4SR058SmB2POHsIlG+T+rAHrxi51M1MKIJfm8sQrHxeD7aRzRs6q+m1fc9jkOhFlsDXkUeFUM64H5fdhb/BQJOm258bsS11RMfNwAnnSwQZMaVVfcW9JMi5fglwavgPB2kqdEChSUxGUEHNKbMQPrd5PoJNZoeKEjtIzluGlXtudbFMh4k=
   - secure: HveZAjAe4uo6GXmOMREW0Ixd0/BjJNdp2dn5S5j0Jlp1IiIbsqxmbtKqp1wPDW8R1vNme65a94BCPzN36+R12oEW8UIx0mkWrXqqaXAt0gYjfM91Yph4q+9QUHDvtm9IWGDlzX2RThfw4yYoJxwhfi3KA9pnMFBELxAXxxEASuMtmnj7vL9+Vyc1IDkqiI/258hG+3/6HUNIV04XtXblH7YwAeuUPFDlt2JyODE8gjAkxySrmqilb/UzY1/M2p9l5e/668St4xQoYsUVTmHxaH87yTSfHP8oSlY1pVDDp2gDN24RYysAkaiu6Pp6rdTHuENYYoGHcTMnhiMY8BiEOpZLsJn2YZ3j4I2XGT5HSindEsJrCshbfSezxj5yvL7SOBEO5ccqDzURT9Zrt+HNTvXnF62Vj9O25X/7jLbqEN83832FueI1c6XjSSnooUBQCm75Xchy5bQBN57nbgT50VS6yLuHyk+Kf2nlOohoBXqryRNxI1y3dgctMCaKvjmb6CNND9zv7VqwNPO0X6YFYObIt/HsBi+/V+IeKB+QDbDJnNPAsDnJoXCV4se0gHTNvp+Pj+/PyEaD6mYNeXyYw4AML7p1DbkqjsN6Bi9haZ8HXBgBOAlsgkqz8t/2euqXZqQZz1YJfsQeTiNDUBoohnKK/4U4Pzx487OS8v4VgSo=
 before_deploy:
-- rvm 1.9.3 --fuzzy do ruby -S gem install json_pure
-- openssl aes-256-cbc -K $encrypted_735841bd5591_key -iv $encrypted_735841bd5591_iv
+- openssl aes-256-cbc -K $encrypted_95553ca09dad_key -iv $encrypted_95553ca09dad_iv
   -in .travis/client.pem.enc -out .travis/client.pem -d
+before_install:
+- openssl aes-256-cbc -K $encrypted_95553ca09dad_key -iv $encrypted_95553ca09dad_iv
+  -in .travis/travis-ci.pem.enc -out .travis-ci.pem.criteo -d
