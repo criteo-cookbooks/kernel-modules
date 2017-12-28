@@ -21,3 +21,4 @@ end
 gem 'inspec'
 gem 'kitchen-inspec'
 gem 'cookbook-release'
+gem 'kitchen-dokken'
