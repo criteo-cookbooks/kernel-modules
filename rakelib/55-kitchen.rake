@@ -18,4 +18,4 @@ task :test_kitchen do
   end
 end
 
-task default: [:test_kitchen] if ENV['encrypted_735841bd5591_iv']
+task default: [:test_kitchen] if ENV['encrypted_95553ca09dad_iv']
