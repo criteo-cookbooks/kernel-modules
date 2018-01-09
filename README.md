@@ -9,8 +9,9 @@ Configure and Load kernel modules.
 Requirements:
 -------------
 ### Platforms
-* Centos 6.x/7.x
-* Rhel 6.x/7.x
+* CentOS 6.x/7.x
+* RHEL 6.x/7.x
+* OEL 6.x/7.x
 
 ### Chef
 * Chef version: >= 12.5.1

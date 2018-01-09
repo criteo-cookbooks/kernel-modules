@@ -18,3 +18,5 @@
 
 require 'chefspec'
 require 'chefspec/berkshelf'
+
+Dir[File.join(__dir__, 'support/**/*.rb')].sort.each { |f| require f }
