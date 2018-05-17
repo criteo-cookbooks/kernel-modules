@@ -20,7 +20,7 @@
 require 'chef/mixin/shell_out'
 include Chef::Mixin::ShellOut
 
-resource_name :kernel_module_rhel
+resource_name :kernel_module_debian
 
 provides :kernel_module, platform_family: 'debian'
 
@@ -150,12 +150,7 @@ action_class.class_eval do
   end
 
   def modload_file
-    case node['platform_version']
-    when /^6/
-      ::File.join(node['kernel_modules']['modules_load.d'], new_resource.name + '.modules')
-    when /^7/
-      ::File.join(node['kernel_modules']['modules_load.d'], new_resource.name + '.conf')
-    end
+    ::File.join(node['kernel_modules']['modules_load.d'], new_resource.name + '.conf')
   end
 
   def modprobe_file
