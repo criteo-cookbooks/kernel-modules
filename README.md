@@ -12,6 +12,7 @@ Requirements:
 * CentOS 6.x/7.x
 * RHEL 6.x/7.x
 * OEL 6.x/7.x
+* Ubuntu 16.04
 
 ### Chef
 * Chef version: >= 12.5.1
