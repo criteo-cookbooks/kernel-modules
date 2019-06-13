@@ -15,6 +15,7 @@ verifier:
   format: documentation
 
 provisioner:
+  chef_license: accept
   attributes:
     authorization:
       sudo:
