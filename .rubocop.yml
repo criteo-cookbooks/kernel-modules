@@ -23,7 +23,9 @@ Metrics/LineLength:
 # Based on data from http://sideeffect.kr/popularconvention#ruby
 #
 ### Comma after each line in a list
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 # It is very common to add key/value pairs to hashes in Chef attributes. Making
 # sure each line has a comma diminishes the chance of someone making an error
@@ -94,11 +96,6 @@ Style/FormatString:
 
 # Really practical. Use with moderation though for readability
 Style/MultilineBlockChain:
-  Enabled: false
-
-# We ain't serving subseconds requests. Forcing to use tr instead of gsub will
-# be annoying without much value
-Performance/StringReplacement:
   Enabled: false
 
 # We don't write documentation there at the moment
