@@ -27,22 +27,22 @@ provides :kernel_module
 default_action :load
 
 # Module name
-property :module_name, kind_of: String, name_property: true
+property :module_name, String, name_property: true
 # Module will be load at boot time
-property :onboot, kind_of: [TrueClass, FalseClass], default: true
+property :onboot, [TrueClass, FalseClass], default: true
 # Allow the module reload in case of options changes
-property :reload, kind_of: [TrueClass, FalseClass], default: false
+property :reload, [TrueClass, FalseClass], default: false
 # Allow to force reload the module. This options is only useful when 'reload' is
 # enable
-property :force_reload, kind_of: [TrueClass, FalseClass], default: false
+property :force_reload, [TrueClass, FalseClass], default: false
 
 # Type of modprobe resource_name (man modprobe.conf)
-property :alias, kind_of: [String, Array, NilClass], default: nil
-property :options, kind_of: [String, Array, NilClass], default: nil
-property :install, kind_of: [String, NilClass], default: nil
-property :remove, kind_of: [String, NilClass], default: nil
-property :blacklist, kind_of: [TrueClass, FalseClass, NilClass], default: nil
-property :check_availability, kind_of: [TrueClass, FalseClass], default: false
+property :alias, [String, Array, NilClass], default: nil
+property :options, [String, Array, NilClass], default: nil
+property :install, [String, NilClass], default: nil
+property :remove, [String, NilClass], default: nil
+property :blacklist, [TrueClass, FalseClass, NilClass], default: nil
+property :check_availability, [TrueClass, FalseClass], default: false
 
 MODPROBE_BIN = '/sbin/modprobe'.freeze
 
