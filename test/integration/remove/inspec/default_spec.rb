@@ -19,13 +19,13 @@
 require(File.expand_path('../../helpers/inspec/spec_helper', File.dirname(__FILE__)))
 
 # Making sure blacklist module not loaded
-describe kernel_module('lp') do
+describe kernel_modules('lp') do
   it { should_not be_loaded }
 end
 
 if os[:release].to_i == 7
   # Testing module
-  describe kernel_module('btusb') do
+  describe kernel_modules('btusb') do
     it { should_not be_loaded }
   end
 
@@ -40,7 +40,7 @@ if os[:release].to_i == 7
   end
 
 elsif os[:release].to_i == 6
-  describe kernel_module('nfs') do
+  describe kernel_modules('nfs') do
     it { should_not be_loaded }
   end
 

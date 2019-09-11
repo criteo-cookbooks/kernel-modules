@@ -17,20 +17,20 @@
 #
 
 if defined?(ChefSpec)
-  ChefSpec.define_matcher :kernel_module
+  ChefSpec.define_matcher :kernel_modules
   def configure_kernel_module(resource)
-    ChefSpec::Matchers::ResourceMatcher.new(:kernel_module, :configure, resource)
+    ChefSpec::Matchers::ResourceMatcher.new(:kernel_modules, :configure, resource)
   end
 
   def load_kernel_module(resource)
-    ChefSpec::Matchers::ResourceMatcher.new(:kernel_module, :load, resource)
+    ChefSpec::Matchers::ResourceMatcher.new(:kernel_modules, :load, resource)
   end
 
   def unload_kernel_module(resource)
-    ChefSpec::Matchers::ResourceMatcher.new(:kernel_module, :unload, resource)
+    ChefSpec::Matchers::ResourceMatcher.new(:kernel_modules, :unload, resource)
   end
 
   def remove_kernel_module(resource)
-    ChefSpec::Matchers::ResourceMatcher.new(:kernel_module, :remove, resource)
+    ChefSpec::Matchers::ResourceMatcher.new(:kernel_modules, :remove, resource)
   end
 end

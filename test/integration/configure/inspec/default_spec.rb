@@ -22,7 +22,7 @@ describe file(module_path(:init, 'firewire-core')) do
   it { should_not exist }
 end
 
-describe kernel_module('firewire-core') do
+describe kernel_modules('firewire-core') do
   it { should_not be_loaded }
 end
 
@@ -31,7 +31,7 @@ if os[:release].to_i == 6
     it { should exist }
   end
 
-  describe kernel_module('nfs') do
+  describe kernel_modules('nfs') do
     it { should_not be_loaded }
   end
 
@@ -58,7 +58,7 @@ elsif os[:release].to_i == 7
     it { should exist }
   end
 
-  describe kernel_module('btusb') do
+  describe kernel_modules('btusb') do
     it { should_not be_loaded }
   end
 

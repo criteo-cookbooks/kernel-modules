@@ -20,9 +20,9 @@
 require 'chef/mixin/shell_out'
 include Chef::Mixin::ShellOut
 
-resource_name :kernel_module
+resource_name :kernel_modules
 
-provides :kernel_module
+provides :kernel_modules
 
 default_action :load
 

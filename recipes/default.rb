@@ -18,7 +18,7 @@
 #
 
 node['kernel_modules']['modules'].each do |module_name, property|
-  kernel_module module_name do
+  kernel_modules module_name do
     property&.each do |k, v|
       send(k.to_sym, v)
     end
