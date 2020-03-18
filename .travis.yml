@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.3.2
+- 2.4.0
 deploy:
   skip_cleanup: true
   edge: true
@@ -28,3 +28,5 @@ before_install:
   -iv $encrypted_95553ca09dad_iv -in .travis/travis-ci.pem.enc -out .travis-ci.pem.criteo
   -d'
 - "[ -f .travis-ci.pem.criteo ] && cp -v .travis-ci.pem.criteo ~/.ssh/id_rsa"
+- yes | gem update --system --force
+- gem install bundler
