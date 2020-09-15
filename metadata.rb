@@ -8,7 +8,7 @@ Configure and Load kernel modules.
 '
 issues_url       'https://github.com/criteo-cookbooks/kernel-modules/issues' if respond_to?(:issues_url)
 source_url       'https://github.com/criteo-cookbooks/kernel-modules' if respond_to?(:source_url)
-version          '2.0.6'
+version          '2.0.7'
 supports         'redhat', '>= 6.0'
 supports         'centos', '>= 6.0'
 supports         'ubuntu'

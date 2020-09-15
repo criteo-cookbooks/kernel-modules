@@ -24,6 +24,7 @@ Attributes
 * `node['kernel_modules']['modules_load.d']` - used to define the `modules_load.d` directory
 * `node['kernel_modules']['modprobe.d']` - use to define the `modprobe.d` directory
 * `node['kernel_modules']['modules']` - use to define the list of modules you want to load/configure
+* `node['kernel_modules']['default_module_action']` - use to define default action for the attribute driven recipe
 
 Usage
 -----
