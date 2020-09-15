@@ -76,4 +76,11 @@ default['kernel_modules']['modules_load.d'] = value_for_platform_family(
 # Modules loading options requirements
 default['kernel_modules']['modprobe.d'] = '/etc/modprobe.d'
 
+##
+# Attribute driven attributes
+##
+
+# Allow to define kernel_module resources via attributes
 default['kernel_modules']['modules'] = {}
+# Allow to override the default kernel_module action for the attribute driven resources
+default['kernel_modules']['default_module_action'] = 'load'

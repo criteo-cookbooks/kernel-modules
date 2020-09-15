@@ -19,6 +19,7 @@
 
 node['kernel_modules']['modules'].each do |module_name, property|
   kernel_module module_name do
+    action node['kernel_modules']['default_module_action'] unless property&.key?('action')
     property&.each do |k, v|
       send(k.to_sym, v)
     end
