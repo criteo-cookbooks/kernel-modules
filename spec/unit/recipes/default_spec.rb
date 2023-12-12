@@ -18,7 +18,7 @@ describe 'kernel-modules::default' do
         case chef_run.node['platform_version'].to_i
         when 6
           %w[initscripts module-init-tools]
-        when 7
+        when 7..9
           %w[systemd kmod]
         end
       expect(chef_run.node['kernel_modules']['packages']).to eq(expected_packages)
@@ -29,7 +29,7 @@ describe 'kernel-modules::default' do
         case chef_run.node['platform_version'].to_i
         when 6
           '/etc/sysconfig/modules'
-        when 7
+        when 7..9
           '/etc/modules-load.d'
         end
       expect(chef_run.node['kernel_modules']['modules_load.d']).to eq(expected_path)

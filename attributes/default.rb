@@ -42,6 +42,10 @@ default['kernel_modules']['packages'] = value_for_platform_family(
         'systemd',           # rpm -q --whatprovides /etc/modules-load.d
         'kmod',              # rpm -q --whatprovides /etc/modprobe.d
       ],
+      '~> 9.0' => [
+        'systemd-udev',      # rpm -q --whatprovides /etc/modules-load.d
+        'kmod',              # rpm -q --whatprovides /etc/modprobe.d
+      ],
     },
     'default' => [
       'kmod',
@@ -64,6 +68,7 @@ default['kernel_modules']['packages'] = value_for_platform_family(
 default['kernel_modules']['modules_load.d'] = value_for_platform_family(
   rhel:    value_for_platform(
     %w[centos redhat oracle] => {
+      '~> 9.0' => '/etc/modules-load.d',
       '~> 8.0' => '/etc/modules-load.d',
       '~> 7.0' => '/etc/modules-load.d',
       '~> 6.0' => '/etc/sysconfig/modules',
