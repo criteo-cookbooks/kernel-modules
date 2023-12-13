@@ -18,8 +18,10 @@ describe 'kernel-modules::default' do
         case chef_run.node['platform_version'].to_i
         when 6
           %w[initscripts module-init-tools]
-        when 7..9
+        when 7..8
           %w[systemd kmod]
+        when 9
+          %w[systemd-udev kmod]
         end
       expect(chef_run.node['kernel_modules']['packages']).to eq(expected_packages)
     end
