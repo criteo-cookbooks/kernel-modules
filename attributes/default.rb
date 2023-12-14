@@ -28,7 +28,7 @@
 
 # Packages requirements
 default['kernel_modules']['packages'] = value_for_platform_family(
-  rhel: value_for_platform(
+  rhel:   value_for_platform(
     %w[centos redhat oracle] => {
       '~> 6.0' => [
         'initscripts',       # rpm -q --whatprovides /etc/sysconfig/modules
@@ -52,16 +52,16 @@ default['kernel_modules']['packages'] = value_for_platform_family(
     ],
   ),
   debian: value_for_platform(
-    %[ubuntu] => {
-      '~> 15.04' => [
-        'systemd',
-        'kmod'
+    %(ubuntu) => {
+      '~> 15.04' => %w[
+        systemd
+        kmod
       ],
     },
     'default' => [
       'kmod',
     ],
-  )
+  ),
 )
 
 # Modules init loading requirements
@@ -74,7 +74,7 @@ default['kernel_modules']['modules_load.d'] = value_for_platform_family(
       '~> 6.0' => '/etc/sysconfig/modules',
     },
   ),
-  debian: '/etc/modules-load.d',
+  debian:  '/etc/modules-load.d',
   default: nil,
 )
 

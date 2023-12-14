@@ -19,6 +19,7 @@
 def module_path(type, module_name)
   raise "'module_path' not supported for this os_family '#{os[:family]}'" unless %w[centos redhat].include?(os[:family])
   return ::File.join('/etc/modprobe.d', module_name + '.conf') if type.to_sym == :load
+
   if os[:release].to_i == 6
     ::File.join('/etc/sysconfig/modules', module_name + '.modules')
   else

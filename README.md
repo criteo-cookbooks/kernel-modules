@@ -131,6 +131,6 @@ limitations under the License.
 
 [author]:                   https://github.com/jmauro
 [repository]:               https://github.com/criteo-cookbooks/kernel-modules
-[build_status]:             https://api.travis-ci.org/criteo-cookbooks/kernel-modules.svg?branch=master
+[build_status]:             https://img.shields.io/github/actions/workflow/status/criteo-cookbooks/kernel-modules/criteo-cookbooks-ci.yml
 [cookbook_version]:         https://img.shields.io/cookbook/v/kernel-modules.svg
 [cookbook]:                 https://supermarket.chef.io/cookbooks/kernel-modules

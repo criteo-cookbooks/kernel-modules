@@ -8,6 +8,7 @@ verifier:
 
 provisioner:
   name: chef_zero
+  chef_license: accept
 
   attributes:
     authorization:

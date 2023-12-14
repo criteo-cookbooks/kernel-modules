@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.5
+          ruby-version: 2.7
           bundler-cache: true
       - run: bundle exec rubocop --version
       - run: bundle exec rubocop
@@ -27,12 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        instance: ['default-centos-7', 'default-ubuntu-1604', 'default-fedora-29']
+        instance: ['default-centos-7', 'default-ubuntu-2004', 'default-fedora-29']
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.5
+          ruby-version: 2.7
           bundler-cache: true
       - run: KITCHEN_LOCAL_YAML=.kitchen.docker.yml bundle exec kitchen verify ${{ matrix.instance }}
   supermarket:
