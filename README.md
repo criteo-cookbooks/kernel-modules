@@ -9,9 +9,9 @@ Configure and Load kernel modules.
 Requirements:
 -------------
 ### Platforms
-* CentOS 6.x/7.x
-* RHEL 6.x/7.x
-* OEL 6.x/7.x
+* CentOS 6.x/7.x/8.x/9.x/10.x
+* RHEL 6.x/7.x/8.x/9.x/10.x
+* OEL 6.x/7.x/8.x/9.x/10.x
 * Ubuntu 16.04
 
 ### Chef
