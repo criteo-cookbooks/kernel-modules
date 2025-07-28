@@ -151,14 +151,14 @@ action_class.class_eval do
 
   def modload_file
     if node['platform_family'] == 'rhel' && node['platform_version'].to_i < 7
-      ::File.join(node['kernel_modules']['modules_load.d'], new_resource.name + '.modules')
+      ::File.join(node['kernel_modules']['modules_load.d'], "#{new_resource.name}.modules")
     else
-      ::File.join(node['kernel_modules']['modules_load.d'], new_resource.name + '.conf')
+      ::File.join(node['kernel_modules']['modules_load.d'], "#{new_resource.name}.conf")
     end
   end
 
   def modprobe_file
-    ::File.join(node['kernel_modules']['modprobe.d'], new_resource.name + '.conf')
+    ::File.join(node['kernel_modules']['modprobe.d'], "#{new_resource.name}.conf")
   end
 
   def whyrun_supported?
