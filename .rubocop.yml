@@ -4,11 +4,10 @@
 # - submit the change in the code_generator
 
 AllCops:
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.0
   Exclude:
   - bundle/**/*
   - vendor/**/*
-
 
 # This requires to alphabetically sort Gem's requirements
 Bundler/OrderedGems:
