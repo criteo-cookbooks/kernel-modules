@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :unit_test do
-  gem 'chef', '= 14.7.17'
+  gem 'chef', '= 17.10.163'
   gem 'chefspec', '>= 9.2.1'
   gem 'fakefs', '>= 2.4.0'
   gem 'webmock', '>= 3.13.0'
