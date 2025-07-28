@@ -12,4 +12,4 @@ version          '2.1.0'
 supports         'redhat', '>= 6.0'
 supports         'centos', '>= 6.0'
 supports         'ubuntu'
-chef_version     '>= 17.10' if respond_to?(:chef_version)
+chef_version     '>= 17.0' if respond_to?(:chef_version)
