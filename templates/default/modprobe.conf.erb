@@ -6,7 +6,7 @@
      when String -%>
 <%= 'alias ' + [@alias, @name].join(' ') %>
 <%   when Array  -%>
-<%= @alias.sort.map { |v| "options #{v} #{@name}" }.join("\n") %>
+<%= @alias.sort.map { |v| "alias #{v} #{@name}" }.join("\n") %>
 <%   end -%>
 <%   if @install %>
 <%= 'install ' + [@name, @install].join(' ') %>
